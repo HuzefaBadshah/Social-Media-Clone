@@ -1,0 +1,24 @@
+{
+  "name": "dev-tinder-backend",
+  "version": "1.0.0",
+  "description": "my first nodeJs practice project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "keywords": [
+    "NodeJs",
+    "Javascript",
+    "MongoDB"
+  ],
+  "author": "Huzefa Badshah",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.0",
+    "validator": "^13.12.0"
+  }
+}
