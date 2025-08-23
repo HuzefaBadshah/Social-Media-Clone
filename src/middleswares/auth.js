@@ -7,7 +7,7 @@ async function userAuth(req, res, next) {
         const { token } = cookies;
         let user = null;
         if (!token) {
-            throw new Error('token is invalid');
+            return res.status(401).send("Please login!");
         }
         const decoded = jwt.verify(token, 'mySuperSecretToken@123');
 
