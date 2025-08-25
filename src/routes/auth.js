@@ -57,7 +57,7 @@ authRouter.patch('/forgot-password', userAuth, async (req, res) => {
     }
 });
 
-authRouter.get('/logout', (req, res) => {
+authRouter.post('/logout', (req, res) => {
     try {
         res.clearCookie('token').send('user logged out sccessfully');
     } catch (error) {
