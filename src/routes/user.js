@@ -7,23 +7,6 @@ const userRouter = require('express').Router();
 const USER_DETAILS = ['firstname', 'lastname', 'age', 'gender', 'photoURL', 'skills'];
 
 userRouter.get('/user/requests/received', userAuth, async (req, res) => {
-    const loggedInUser = req.user;
-    try {
-        const requests = await ConnectionRequest.find({
-            toUserId: loggedInUser._id,
-            status: 'interested'
-        });
-
-        res.status(200).json({
-            data: requests,
-            message: 'Data fetched Successfully'
-        });
-    } catch (err) {
-        res.status(400).send('ERROR: ' + err.message);
-    }
-});
-
-userRouter.get('/user/requests/received', userAuth, async (req, res) => {
     try {
         const user = req.user;
         const connectionRequests = await ConnectionRequest.find({

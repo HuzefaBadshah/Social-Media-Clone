@@ -36,27 +36,27 @@ profileRouter.patch('/profile/edit', userAuth, async (req, res) => {
     }
 });
 
-profileRouter.get('/user', userAuth, async (req, res) => {
-    try {
-        const user = await User.findOne({ emailId: req.body.emailId });
-        if (!user) {
-            res.status(404).send('User not found');
-        } else {
-            res.send(user);
-        }
-    } catch (error) {
-        res.status(400).send('cannot find the user');
-    }
-});
+// profileRouter.get('/user', userAuth, async (req, res) => {
+//     try {
+//         const user = await User.findOne({ emailId: req.body.emailId });
+//         if (!user) {
+//             res.status(404).send('User not found');
+//         } else {
+//             res.send(user);
+//         }
+//     } catch (error) {
+//         res.status(400).send('cannot find the user');
+//     }
+// });
 
-profileRouter.delete('/user', userAuth, async (req, res) => {
-    try {
-        await User.findByIdAndDelete(req.body.userId);
-        res.status(200).send('User deleted successfully');
-    } catch (error) {
-        res.status(400).send('Something went wrong');
-    }
-});
+// profileRouter.delete('/user', userAuth, async (req, res) => {
+//     try {
+//         await User.findByIdAndDelete(req.body.userId);
+//         res.status(200).send('User deleted successfully');
+//     } catch (error) {
+//         res.status(400).send('Something went wrong');
+//     }
+// });
 
 // profileRouter.patch('/user/:userId', userAuth, async (req, res) => {
 //     const APPROVED_FIELDS = ["firstname", "lastname", "age", "gender", "photoURL", "skills"];

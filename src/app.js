@@ -27,6 +27,7 @@ connectDB.then(() => {
     app.listen(888, () => {
         console.log('Server is up and running on port 888');
     });
-}).catch(() => {
+}).catch((err) => {
+    console.log('Database connection error:', err);
     console.log('Database connection was not established.');
 });
